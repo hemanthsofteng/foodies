@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tcp.model.Data;
 import com.tcp.model.DisRates;
 import com.tcp.service.SimpleService;
 
@@ -20,6 +21,8 @@ public class SimpleController {
 	@Autowired
 	SimpleService simpleService;
 	
+	@Autowired
+	Data data;
 	@PostMapping(value = "/postdata",produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String getData(@RequestBody DisRates rates) throws Exception
 	{
@@ -29,7 +32,7 @@ public class SimpleController {
 	@GetMapping("/fetch")
 	public String ping()
 	{
-		return "pong";
+		return  data.toString();
 	}
 
 }
