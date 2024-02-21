@@ -39,7 +39,7 @@ spec:
       volumeMounts:
       - name: foodiesmyappconfigmapvolume
         mountPath: "/config"
-        readOnly: "true"
+        readOnly: true
     volumes:
     - name: foodiesmyappconfigmapvolume
       configMap:
