@@ -34,6 +34,16 @@ spec:
     - name: password
       valueFrom:
         configMapKeyRef:
-          name: foodiesconfigmap
+          name: foodiesmyappconfigmap
           key: password
-
+      volumeMounts:
+      - name: foodiesmyappconfigmapvolume
+        mountPath: "/config"
+        readOnly: "true"
+    volumes:
+    - name: foodiesmyappconfigmapvolume
+      configMap:
+        name: foodiesmyappconfigmap
+        items:
+        - key: myapp.properties
+          value: "myapp.properties"
