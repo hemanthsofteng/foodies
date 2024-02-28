@@ -26,20 +26,20 @@ spec:
         cpu: "1000m"
         memory: "1000Mi"
       # env:
-      # - name: username
-      #   valueFrom:
-      #     configMapKeyRef:
-      #       name: foodiesconfigmap
-      #       key: username
-      # - name: password
-      #   valueFrom:
-      #     configMapKeyRef:
-      #       name: foodiesmyappconfigmap
-      #       key: password
-      volumeMounts:
-      - name: foodiesvolume
-        mountPath: "/config"
-  volumes:
-  - name: foodiesvolume
-    persistentVolumeClaim:
-      claimName: foodiespvc
+    # - name: username
+    #   valueFrom:
+    #     configMapKeyRef:
+    #       name: foodiesconfigmap
+    #       key: username
+    # - name: password
+    #   valueFrom:
+    #     configMapKeyRef:
+    #       name: foodiesmyappconfigmap
+    #       key: password
+    volumeMounts:
+    - name: foodiesvolume
+      mountPath: "/config"
+volumes:
+- name: foodiesvolume
+  persistentVolumeClaim:
+    claimName: foodiespvc
