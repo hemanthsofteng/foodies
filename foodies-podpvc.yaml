@@ -39,7 +39,7 @@ spec:
     volumeMounts:
     - name: foodiesvolume
       mountPath: "/u01/data"
-volumes:
-- name: foodiesvolume
-  persistentVolumeClaim:
-    claimName: foodiespvc
+  volumes:
+  - name: foodiesvolume
+    persistentVolumeClaim:
+      claimName: foodiespvc
