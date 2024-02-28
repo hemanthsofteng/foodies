@@ -38,7 +38,7 @@ spec:
     #       key: password
     volumeMounts:
     - name: foodiesvolume
-      mountPath: "/config"
+      mountPath: "/u01/data"
 volumes:
 - name: foodiesvolume
   persistentVolumeClaim:
